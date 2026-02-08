@@ -19,16 +19,18 @@ pipeline {
     }
 
     stage('Setup venv + install') {
-      steps {
-        sh '''
-          set -e
-          python3 -m venv .venv
-          . .venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-        '''
-      }
-    }
+  steps {
+    sh '''
+      set -e
+      ls -la
+      find . -maxdepth 2 -type f -name "requirements*.txt" -o -name "pyproject.toml" -o -name "Pipfile" -o -name "setup.py" | sed 's|^./||'
+      python3 -m venv .venv
+      . .venv/bin/activate
+      python -m pip install --upgrade pip
+    '''
+  }
+}
+
 
     stage('Run tests') {
       steps {
