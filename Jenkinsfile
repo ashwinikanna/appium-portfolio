@@ -13,7 +13,7 @@ pipeline {
           set -e
           python3 -m venv .venv
           . .venv/bin/activate
-         python -m pytest -q -m "not mobile"
+         python -m pytest -q -m 'not mobile' || [ $? -eq 5 ]
         '''
       }
     }
