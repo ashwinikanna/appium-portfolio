@@ -14,7 +14,7 @@ pipeline {
           python3 -m venv .venv
           . .venv/bin/activate
           python -m pip install --upgrade pip
-          pip install pytest
+          pip install pytest Appium-Python-Client selenium
         '''
       }
     }
