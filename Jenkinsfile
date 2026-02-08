@@ -13,8 +13,7 @@ pipeline {
           set -e
           python3 -m venv .venv
           . .venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install pytest Appium-Python-Client selenium
+         python -m pytest -q -m "not mobile"
         '''
       }
     }
