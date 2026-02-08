@@ -1,3 +1,6 @@
+import pytest
+pytestmark = pytest.mark.mobile
+
 from flows.clipboardDemo_flow import ClipboardDemoFlow
 
 

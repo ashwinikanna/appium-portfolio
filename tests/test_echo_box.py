@@ -1,3 +1,6 @@
+import pytest
+pytestmark = pytest.mark.mobile
+
 from flows.echo_box_flow import EchoBoxFlow
 
 
